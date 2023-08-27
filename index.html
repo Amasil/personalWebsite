@@ -11,21 +11,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            font-size: 36px;
+        }
+
+        .fa {
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .fa:hover {
+            color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        /* Remove underlines from the social media icons */
+        .social-links a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
-            <a href="https://www.facebook.com/amasil123/" class="fa fa-facebook" target="_blank"></a>
-            <a href="https://twitter.com/amasil_r" class="fa fa-twitter" target="_blank"></a>
-            <a href="https://www.instagram.com/amasil_r/" class="fa fa-instagram" target="_blank"></a>
-            <a href="https://t.snapchat.com/HqTvBluK" class="fa fa-snapchat-ghost" target="_blank"></a>
-        </div>
-    </nav>
-    <main>
-        <!-- Your main content goes here -->
-    </main>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://www.facebook.com/amasil123/" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://twitter.com/amasil_r" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/amasil_r/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://t.snapchat.com/HqTvBluK" class="fa fa-snapchat-ghost" target="_blank"></a>
+    </div>
 </body>
 
 </html>
