@@ -129,12 +129,34 @@
             font-weight: 600;
             text-decoration: none;
             transition-duration: 0.25s;
+            border-bottom: 1px solid #CFD8DC;
+            font-weight: 500;
+            /* Slightly lighter font weight */
+            color: #444;
+            /* Darker text color */
+        }
+
+        .menu__item:last-child {
+            border-bottom: none;
         }
 
         .menu__item:hover {
-            background-color: #CFD8DC;
+            background-color: #e0e0e0;
+            color: #444;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu__toggle");
+            const menuBox = document.querySelector(".menu__box");
+
+            document.addEventListener("click", function (event) {
+                if (!menuBox.contains(event.target) && !menuToggle.contains(event.target)) {
+                    menuToggle.checked = false;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -144,9 +166,9 @@
         <span></span>
     </label>
     <ul class="menu__box">
-        <li class="menu__item"><a href="#">Option 1</a></li>
-        <li class="menu__item"><a href="#">Option 2</a></li>
-        <li class="menu__item"><a href="#">Option 3</a></li>
+        <li class="menu__item"><a href="#">Favourite Movies</a></li>
+        <li class="menu__item"><a href="#">Favourite TV Series</a></li>
+        <li class="menu__item"><a href="#">About</a></li>
     </ul>
     <div class="social-links">
         <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
