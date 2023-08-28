@@ -4,29 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <title>Your Personal Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .home-button:hover {
-            color: #e74c3c;
-            transform: scale(1.1);
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -37,10 +18,29 @@
             background-color: #f5f5f5;
         }
 
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            z-index: 2;
+        }
+
+        .home-button:hover {
+            color: #e74c3c;
+        }
+
         .social-links {
             display: flex;
             gap: 20px;
             font-size: 36px;
+        }
+
+        /* Remove underlines from the social media icons */
+        .social-links a {
+            text-decoration: none;
         }
 
         .fa {
@@ -50,121 +50,104 @@
 
         .fa:hover {
             color: #e74c3c;
-            transform: scale(1.1);
         }
 
-        /* Remove underlines from the social media icons */
-        .social-links a {
-            text-decoration: none;
-        }
-
-        .nav {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            /* Match width with home button */
-            height: 40px;
-            /* Match height with home button */
-            background-color: #fff;
-            transition: 0.5s;
-            border-radius: 50px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .menu {
-            margin: 0;
-            padding: 0;
-            width: 40px;
-            /* Match width with home button */
-            height: 40px;
-            /* Match height with home button */
-            overflow: hidden;
-            transition: 0.5s;
-        }
-
-        .nav input:checked~.menu {
-            width: 200px;
-            /* Adjust menu width */
-        }
-
-        .menu li {
-            list-style: none;
-            margin: 10px 0;
-            /* Adjust spacing between menu items */
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: 0.5s;
-            display: block;
-            /* Display as block elements */
-            padding: 5px 10px;
-            /* Add padding for better click area */
-        }
-
-        .menu li a:hover {
-            color: #161919;
-        }
-
-        .nav input {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
+        #menu__toggle {
             opacity: 0;
         }
 
-        .nav span {
+        #menu__toggle:checked+.menu__btn>span {
+            transform: rotate(45deg);
+        }
+
+        #menu__toggle:checked+.menu__btn>span::before {
+            top: 0;
+            transform: rotate(0deg);
+        }
+
+        #menu__toggle:checked+.menu__btn>span::after {
+            top: 0;
+            transform: rotate(90deg);
+        }
+
+        #menu__toggle:checked~.menu__box {
+            right: 0;
+        }
+
+        .menu__btn {
             position: absolute;
-            left: 30px;
-            width: 30px;
-            height: 4px;
-            border-radius: 50px;
-            background-color: #666;
-            pointer-events: none;
-            transition: 0.5s;
+            top: 25px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            z-index: 1;
         }
 
-        .nav input:checked~span {
-            background-color: #f974a1;
+        .menu__btn>span,
+        .menu__btn>span::before,
+        .menu__btn>span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+            transition-duration: 0.25s;
         }
 
-        .nav span:nth-child(2) {
-            transform: translateY(-8px);
+        .menu__btn>span::before {
+            content: '';
+            top: -8px;
         }
 
-        .nav input:checked~span:nth-child(2) {
-            transform: translateY(0) rotate(-45deg);
+        .menu__btn>span::after {
+            content: '';
+            top: 8px;
         }
 
-        .nav span:nth-child(3) {
-            transform: translateY(8px);
+        .menu__box {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: #ECEFF1;
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+            transition-duration: 0.25s;
+        }
+
+        .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: 0.25s;
+        }
+
+        .menu__item:hover {
+            background-color: #CFD8DC;
         }
     </style>
 </head>
 
 <body>
     <a href="#" class="home-button"><i class="fa fa-home"></i></a>
-    <div class="nav">
-        <input type="checkbox">
+    <input type="checkbox" id="menu__toggle" class="menu__toggle">
+    <label for="menu__toggle" class="menu__btn">
         <span></span>
-        <span></span>
-        <div class="menu">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">cursos</a></li>
-            <li><a href="#">blog</a></li>
-            <li><a href="#">contactos</a></li>
-        </div>
-    </div>
-
+    </label>
+    <ul class="menu__box">
+        <li class="menu__item"><a href="#">Option 1</a></li>
+        <li class="menu__item"><a href="#">Option 2</a></li>
+        <li class="menu__item"><a href="#">Option 3</a></li>
+    </ul>
     <div class="social-links">
         <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
         <a href="https://www.facebook.com/amasil123/" class="fa fa-facebook" target="_blank"></a>
