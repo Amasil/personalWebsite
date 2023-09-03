@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello?</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
@@ -16,6 +18,8 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f5f5f5;
+            font-family: "Roboto", sans-serif;
+            background-image: linear-gradient(to bottom, #f7f2ef, #e1ddd2, #b0bec5);
         }
 
         .home-button {
@@ -137,6 +141,26 @@
         .nav input:checked~span:nth-child(3) {
             transform: translateY(0) rotate(45deg);
         }
+
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-paragraph {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -153,12 +177,26 @@
         </div>
     </div>
 
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
-        <a href="https://www.facebook.com/amasilrahim/" class="fa fa-facebook" target="_blank"></a>
-        <a href="https://twitter.com/amasil_r" class="fa fa-twitter" target="_blank"></a>
-        <a href="https://www.instagram.com/amasil_r/" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://t.snapchat.com/HqTvBluK" class="fa fa-snapchat-ghost" target="_blank"></a>
+    <div class="about-section">
+        <p class="about-heading">About Me</p>
+        <p class="about-paragraph">Aspiring computer science professional with a love for problem solving and
+            innovation. Experienced in Java, Python, HTML/CSS, and JavaScript, with a penchant for translating difficult
+            problems into efficient solutions. Proficient at using developer tools such as Git, VS Code, and PyCharm to
+            drive effective development processes.</p>
+
+        <p class="about-paragraph">In my current role as a Customer Service Representative at Intact Financial
+            Corporation, I have consistently exceeded targets and successfully streamlined financial processes, all
+            while ensuring accuracy and compliance. Through dynamic collaborations and proactive approaches, I thrive in
+            team environments and execute tasks with precision and efficiency.</p>
+
+        <p class="about-paragraph">My journey includes diverse experiences, from optimizing lab operations at the
+            University of Calgary to assisting claims adjusters at Intact Financial Corporation. I've leveraged my
+            technical skills to develop impactful projects like a Java-based Health Information Tracker and a web-based
+            Payment Calculator using HTML, CSS, and JavaScript.</p>
+
+        <p class="about-paragraph">Currently pursuing a B.Sc. in Computer Science at the University of Calgary, I am
+            eager to continue expanding my technical expertise and contributing to innovative solutions in the field.
+        </p>
     </div>
 </body>
 
