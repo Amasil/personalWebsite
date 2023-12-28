@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amasil's Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        .home-button {
+            position: absolute;
+            top: 28px;
+            left: 33px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            z-index: 2;
+        }
+
+        .home-button:hover {
+            color: #e74c3c;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            font-size: 36px;
+        }
+
+        .fa {
+            text-decoration: none;
+        }
+
+        .fa {
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .fa:hover {
+            color: #e74c3c;
+        }
+
+        body,
+        .nav,
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav {
+            position: absolute;
+            top: 28px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+            z-index: 1;
+        }
+
+        .about-section {
+            max-width: 800px;
+            margin: 110px auto 0;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .menu {
+            margin: 0;
+            padding: 10px;
+            width: auto;
+            overflow: hidden;
+            height: 25px;
+        }
+
+        .menu li {
+            list-style: none;
+            margin: 0 10px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+
+        .menu li a:hover {
+            color: #161919;
+        }
+
+
+        .about-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-paragraph {
+            margin-bottom: 10px;
+        }
+
+
+        .project-list li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .project-list li {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            background-color: #fff;
+            transition: box-shadow 0.3s;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .project-title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        .project-list li:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @media only screen and (max-width: 768px) {
+            .about-section {
+                padding: 30px;
+            }
+
+            .project-list li {
+                margin-bottom: 30px;
+            }
+
+            .project-title {
+                font-size: 20px;
+            }
+
+            .project-description {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
+
+    <div class="nav">
+        <div class="menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="movielist.html">Favourite Movies</a></li>
+            <li><a href="tvlist.html">Favourite TV Shows</a></li>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <p class="about-heading">My Projects</p>
+
+        <ul class="project-list">
+            <li class="project-container">
+                <div class="project-title-container">
+                    <p class="project-title">Blood Donation Management System</p>
+                    <a href="https://github.com/Amasil/471" class="fa fa-github fa-2x" target="_blank"></a>
+                </div>
+                <p class="project-description">
+                <ul>
+                    <li> Technologies Used: React, Node.js, SQL, MySQL, CSS</li>
+                    <li>Developed a dynamic user interface with React and Node.js, ensuring seamless interaction and
+                        real-time updates for users with an efficient SQL database structure to manage data, enhancing
+                        query performance and system responsiveness.</li>
+                </ul>
+                </p>
+            </li>
+
+            <li class="project-container">
+                <div class="project-title-container">
+                    <p class="project-title"> Personal Website</p>
+                    <a href="https://github.com/Amasil/personalWebsite" class="fa fa-github fa-2x" target="_blank"></a>
+                </div>
+
+                <ul>
+                    <li>Technologies Used: HTML, CSS, JavaScript, Git, OMDB API</li>
+                    <li>You're looking at it right now. </li>
+                    <li>Conceptualized, designed, and launched a personalized website featuring favorite movie and TV
+                        series lists. The site boasts a user-friendly UI/UX design, is hosted on a custom domain, and
+                        seamlessly integrates data retrieval via the OMDB API.</li>
+                </ul>
+            </li>
+
+            <li class="project-container">
+                <div class="project-title-container">
+                    <p class="project-title">DTPR Payment Calculator</p>
+                    <a href="https://github.com/Amasil/dtprcalculator" class="fa fa-github fa-2x" target="_blank"></a>
+                </div>
+                <ul>
+                    <li>Technologies Used: HTML, CSS, JavaScript, Git</li>
+                    <li>Built a web-based calculator that accurately computes diagnostic treatment costs according to
+                        industry protocols. Crafted a responsive interface with robust error checks and included GST
+                        calculations to ensure a seamless user experience.</li>
+                </ul>
+            </li>
+
+            <li class="project-container">
+                <div class="project-title-container">
+                    <p class="project-title">Self-Checkout System</p>
+                </div>
+                <ul>
+                    <li>Technologies Used: Java, JavaSwing, Git</li>
+                    <li>Orchestrated the development of a Java-based self-checkout system with a team of 25 members for
+                        a course. Implemented intuitive graphical interfaces using JavaSwing to enhance the efficiency
+                        of the self-checkout process.</li>
+                </ul>
+            </li>
+
+            <li class="project-container">
+                <div class="project-title-container">
+                    <p class="project-title">Health Information Tracker</p>
+                    <a href="https://github.com/Amasil/healthinfotracker" class="fa fa-github fa-2x"
+                        target="_blank"></a>
+                </div>
+                <ul>
+                    <li>Technologies Used: Java, JavaFX, Git</li>
+                    <li>Designed a Java program using data structures to create and manage user helath information,
+                        enhancing
+                        data retrieval efficiency with an intuitive JavaFX GUI with multiple scenes, streamlining
+                        navigation and enabling
+                        insightful data analysis.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://github.com/Amasil" class="fa fa-github" target="_blank"></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
