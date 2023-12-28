@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
+            min-width: 400px;
             margin: 0;
             padding: 0;
             display: flex;
@@ -38,7 +39,6 @@
             font-size: 36px;
         }
 
-        /* Remove underlines from the social media icons */
         .social-links a {
             text-decoration: none;
         }
@@ -62,7 +62,7 @@
 
         .nav {
             position: absolute;
-            top: 28px;
+            top: 25px;
             right: 20px;
             background-color: #fff;
             border-radius: 50px;
@@ -74,7 +74,6 @@
             margin: 0;
             padding: 10px;
             width: auto;
-            /* Set width to auto to make it always expanded */
             overflow: hidden;
             height: 25px;
         }
@@ -114,6 +113,36 @@
 
         .about-paragraph {
             margin-bottom: 20px;
+        }
+
+        /* Add media query for smaller screens */
+        @media only screen and (max-width: 768px) {
+
+            .home-button,
+            .nav {
+                text-align: center;
+                width: 100%;
+                margin: 0px;
+                left: 0px;
+                top: 0px;
+                right: 0px;
+            }
+
+            .menu {
+                margin-top: 30px;
+                display: block;
+                text-align: center;
+            }
+
+            .menu li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+
+            .about-section {
+                padding: 30px;
+                margin-top: 50px;
+            }
         }
     </style>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1/1176.png">
