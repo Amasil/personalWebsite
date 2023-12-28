@@ -17,6 +17,7 @@
         p {
             margin: 0;
             padding: 0;
+            min-width: 300px;
         }
 
         body {
@@ -253,16 +254,43 @@
                 justify-content: center;
             }
 
-            .nav-dropdowns {
+            #genre-dropdown-container {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 margin-top: 10px;
+                justify-content: space-between;
+                width: 100%;
             }
 
             #genre-dropdown,
             #sort-dropdown {
-                width: 100%;
+                margin-top: 20px;
+                width: calc(49%);
+                font-size: 16px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: white;
+                color: #333;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            #genre-dropdown:hover,
+            #sort-dropdown:hover {
+                border-color: #007BFF;
+                box-shadow: 0 0 5px rgba(3, 215, 252);
+            }
+
+            #genre-dropdown option,
+            #sort-dropdown option {
+                color: #333;
+            }
+
+            #genre-dropdown option:checked,
+            #sort-dropdown option:checked {
+                background-color: #007BFF;
+                color: white;
             }
 
             .button-4 {
@@ -271,6 +299,8 @@
             }
         }
     </style>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5349/5349135.png">
+
 </head>
 
 

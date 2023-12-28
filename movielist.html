@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <title>Favourite Shows</title>
+    <title>Favourite Movies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -96,13 +96,6 @@
             max-width: 300px;
             background-color: #fff;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        @media screen and (max-width: 768px) {
-            #movie-list {
-                flex-direction: column;
-                align-items: center;
-            }
         }
 
         #genre-dropdown-container {
@@ -247,7 +240,67 @@
         .button-4:-webkit-details-marker {
             display: none;
         }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links {
+                margin-top: 10px;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            #genre-dropdown-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 10px;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            #genre-dropdown,
+            #sort-dropdown {
+                margin-top: 20px;
+                width: calc(49%);
+                font-size: 16px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: white;
+                color: #333;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            #genre-dropdown:hover,
+            #sort-dropdown:hover {
+                border-color: #007BFF;
+                box-shadow: 0 0 5px rgba(3, 215, 252);
+            }
+
+            #genre-dropdown option,
+            #sort-dropdown option {
+                color: #333;
+            }
+
+            #genre-dropdown option:checked,
+            #sort-dropdown option:checked {
+                background-color: #007BFF;
+                color: white;
+            }
+
+            .button-4 {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
     </style>
+    <link rel="icon"
+        href="https://cdn-icons-png.flaticon.com/512/1179/1179120.png">
+
 </head>
 
 <body>
