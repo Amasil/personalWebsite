@@ -1,208 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Amasil Rahim</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
-        body {
-            min-width: 400px;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-        }
+      body {
+        min-width: 400px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+          sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      }
 
-        .home-button {
-            position: absolute;
-            top: 28px;
-            left: 33px;
-            font-size: 24px;
-            color: #333;
-            text-decoration: none;
-            z-index: 2;
-        }
+      .home-button {
+        position: absolute;
+        top: 28px;
+        left: 33px;
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+        z-index: 2;
+      }
 
-        .home-button:hover {
-            color: #e74c3c;
-        }
+      .home-button:hover {
+        color: #e74c3c;
+      }
 
-        .social-links {
-            display: flex;
-            gap: 20px;
-            font-size: 36px;
-        }
+      .social-links {
+        display: flex;
+        gap: 20px;
+        font-size: 36px;
+      }
 
-        .social-links a {
-            text-decoration: none;
-        }
+      .social-links a {
+        text-decoration: none;
+      }
 
-        .fa {
-            color: #333;
-            transition: color 0.3s;
-        }
+      .fa {
+        color: #333;
+        transition: color 0.3s;
+      }
 
-        .fa:hover {
-            color: #e74c3c;
-        }
+      .fa:hover {
+        color: #e74c3c;
+      }
 
-        body,
-        .nav,
-        .menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      body,
+      .nav,
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
+      .nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu {
+        margin: 0;
+        padding: 10px;
+        width: auto;
+        overflow: hidden;
+        height: 25px;
+      }
+
+      .menu li {
+        list-style: none;
+        margin: 0 10px;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: #666;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: 0.5s;
+      }
+
+      .menu li a:hover {
+        color: #161919;
+      }
+
+      .about-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px;
+        text-align: left;
+        background-color: #fff;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-heading {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .about-paragraph {
+        margin-bottom: 20px;
+      }
+
+      /* Add media query for smaller screens */
+      @media only screen and (max-width: 768px) {
+        .home-button,
         .nav {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #fff;
-            border-radius: 50px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+          text-align: center;
+          width: 100%;
+          margin: 0px;
+          left: 0px;
+          top: 0px;
+          right: 0px;
         }
 
         .menu {
-            margin: 0;
-            padding: 10px;
-            width: auto;
-            overflow: hidden;
-            height: 25px;
+          margin-top: 30px;
+          display: block;
+          text-align: center;
         }
 
         .menu li {
-            list-style: none;
-            margin: 0 10px;
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: 0.5s;
-        }
-
-        .menu li a:hover {
-            color: #161919;
+          display: inline-block;
+          margin: 0 5px;
         }
 
         .about-section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px;
-            text-align: left;
-            background-color: #fff;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 30px;
+          margin-top: 80px;
+        }
+      }
+      /* Add media query for smaller screens */
+      @media only screen and (max-width: 600px) {
+        .home-button,
+        .nav {
+          text-align: center;
+          width: 100%;
+          left: 0px;
+          top: 0px;
+          right: 0px;
         }
 
-        .about-heading {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .menu {
+          margin-top: 35px;
+          display: block;
+          text-align: center;
+          padding-bottom: 20px;
         }
 
-        .about-paragraph {
-            margin-bottom: 20px;
+        .menu li {
+          display: inline-block;
         }
 
-        /* Add media query for smaller screens */
-        @media only screen and (max-width: 768px) {
-
-            .home-button,
-            .nav {
-                text-align: center;
-                width: 100%;
-                margin: 0px;
-                left: 0px;
-                top: 0px;
-                right: 0px;
-            }
-
-            .menu {
-                margin-top: 30px;
-                display: block;
-                text-align: center;
-            }
-
-            .menu li {
-                display: inline-block;
-                margin: 0 5px;
-            }
-
-            .about-section {
-                padding: 30px;
-                margin-top: 80px;
-            }
+        .about-section {
+          margin-top: 94px;
         }
+      }
     </style>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1/1176.png">
-</head>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1/1176.png" />
+  </head>
 
-<body>
+  <body>
     <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
 
     <div class="nav">
-        <div class="menu">
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="movielist.html">Favourite Movies</a></li>
-            <li><a href="tvlist.html">Favourite TV Shows</a></li>
-        </div>
+      <div class="menu">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="movielist.html">Favourite Movies</a></li>
+        <li><a href="tvlist.html">Favourite TV Shows</a></li>
+      </div>
     </div>
 
     <div class="about-section">
+      <p class="about-heading">About Me</p>
+      <p class="about-paragraph">
+        Enthusiastic computer science student at the University of Calgary,
+        pursuing a B.Sc. in Computer Science
+      </p>
 
-        <p class="about-heading">About Me</p>
-        <p class="about-paragraph">Enthusiastic computer science student at the University of Calgary, pursuing a B.Sc.
-            in Computer Science</p>
+      <p class="about-paragraph">
+        Experienced in a diverse range of programming languages, including C,
+        C++, Python, Java, JavaFX, JavaSwing, SQL, HTML, CSS, JavaScript, React,
+        Node.Js, and Express.Js. Proficient in utilizing developer tools such as
+        Git, MySQL, VS Code and GitHub Copilot to drive effective development
+        processes.
+      </p>
 
-        <p class="about-paragraph">Experienced in a diverse range of programming languages, including C, C++, Python,
-            Java, JavaFX, JavaSwing, SQL, HTML, CSS, JavaScript, React, Node.Js, and Express.Js. Proficient in utilizing
-            developer tools such as Git, MySQL, VS Code and GitHub Copilot to drive effective development processes.</p>
+      <p class="about-paragraph">
+        In my current role as a CSR at Intact Financial Corporation, I have
+        demonstrated a strong aptitude for optimizing processes. Leading the
+        creation of thorough guides and resources, I have improved the
+        effectiveness of the payment workflow and added to the team's success as
+        a whole.
+      </p>
 
-        <p class="about-paragraph">In my current role as a CSR at Intact Financial Corporation, I have demonstrated a
-            strong aptitude for optimizing processes. Leading the creation of thorough guides and resources, I have
-            improved the effectiveness of the payment workflow and added to the team's success as a whole.
-        </p>
+      <p class="about-paragraph">
+        At the University of Calgary, I work as a lab supervisor. I effectively
+        manage and administer lab equipment, supervise its maintenance,
+        proactively address computer problems for almost 200 users each week,
+        and optimize support for faculty and students.
+      </p>
 
-        <p class="about-paragraph">At the University of Calgary, I work as a lab supervisor. I effectively manage and
-            administer lab equipment, supervise its maintenance, proactively address computer problems for almost 200
-            users each week, and optimize support for faculty and students.</p>
+      <p class="about-paragraph">
+        My work experience also includes a role as a Claims Assistant II at
+        Intact Financial Corporation, where I conducted system checks, ensured
+        resource readiness for new hires, and supported claims adjusters in
+        accurate claims management and file handling.
+      </p>
 
-        <p class="about-paragraph">My work experience also includes a role as a Claims Assistant II at Intact Financial
-            Corporation, where I conducted system checks, ensured resource readiness for new hires, and supported claims
-            adjusters in accurate claims management and file handling.</p>
+      <p class="about-paragraph">
+        I am passionate about software development and have undertaken impactful
+        projects, including a Blood Donation Management System using React,
+        Node.js, SQL, and MySQL, Websites with HTML, CSS, JavaScript, and Git
+        integration, and a DTPR Payment Calculator with HTML, CSS, and
+        JavaScript.
+      </p>
 
-        <p class="about-paragraph">I am passionate about software development and have undertaken impactful projects,
-            including a Blood Donation Management System using React, Node.js, SQL, and MySQL, Websites with HTML, CSS,
-            JavaScript, and Git integration, and a DTPR Payment Calculator with HTML, CSS, and
-            JavaScript.</p>
+      <p class="about-paragraph">
+        Committed to community engagement, I volunteered at Calgary Hacks 2023,
+        where I effectively communicated expectations and logistics for 250
+        participants and oversaw the management of 45 groups.
+      </p>
 
-        <p class="about-paragraph">Committed to community engagement, I volunteered at Calgary Hacks 2023, where I
-            effectively communicated expectations and logistics for 250 participants and oversaw the management of 45
-            groups.</p>
-
-        <p class="about-paragraph">Eager to expand my technical expertise, I am dedicated to contributing to innovative
-            solutions in computer science and making a positive impact through my skills and experiences. I am excited
-            about transitioning into a career as a software developer to further pursue my passion for crafting
-            efficient and impactful solutions.</p>
-        <p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
-            <a href="https://github.com/Amasil" class="fa fa-github" target="_blank"></a>
-        </div>
-        </p>
+      <p class="about-paragraph">
+        Eager to expand my technical expertise, I am dedicated to contributing
+        to innovative solutions in computer science and making a positive impact
+        through my skills and experiences. I am excited about transitioning into
+        a career as a software developer to further pursue my passion for
+        crafting efficient and impactful solutions.
+      </p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/amasilrahim/"
+          class="fa fa-linkedin"
+          target="_blank"
+        ></a>
+        <a
+          href="https://github.com/Amasil"
+          class="fa fa-github"
+          target="_blank"
+        ></a>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
