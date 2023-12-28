@@ -9,10 +9,8 @@
     <title>Favourite Shows</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Reset some default styles */
         body,
         h1,
         h2,
@@ -21,19 +19,13 @@
             padding: 0;
         }
 
-        /* Global styles */
         body {
-            font-family: "Roboto", sans-serif;
-            background-image: linear-gradient(to bottom, #f7f2ef, #e1ddd2, #b0bec5);
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: #f5f5f5;
+
         }
 
-        /* header {
-          text-align: center;
-          padding: 1rem 0;
-        } */
-
-        /* Movie card styles */
-        .movie-card {
+        .tv-card {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,25 +34,24 @@
             cursor: pointer;
         }
 
-        .movie-card:hover {
+        .tv-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .movie-card img {
+        .tv-card img {
             width: 100%;
-            height: auto;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            height: 450px;
+            border-radius: 8px;
         }
 
-        .movie-card h2 {
+        .tv-card h2 {
             margin: 1rem 0 0.5rem;
             font-size: 1.2rem;
             color: #333;
         }
 
-        .movie-card p {
+        .tv-card p {
             margin: 0.5rem 0;
             color: #666;
         }
@@ -70,28 +61,20 @@
             outline: none;
         }
 
-        /* Add padding to movie title and synopsis */
-        .movie-card h2.title,
-        .movie-card p.synopsis,
-        .movie-card p.genre,
-        .movie-card p.rating {
+        .tv-card h2.title,
+        .tv-card p.synopsis,
+        .tv-card p.genre,
+        .tv-card p.rating {
             padding: 0 1rem;
-            /* Adjust padding as needed */
         }
 
-        /* Highlight movie card on hover with shadow effect */
-        .movie-card:hover {
+        .tv-card:hover {
             background-color: white;
-            /* Set background color to white */
             box-shadow: 0 0 10px rgba(3, 215, 252);
-            /* Shadow effect */
             transform: translate(0, -5px);
-            /* Move the card up slightly */
             transition: transform 0.2s, box-shadow 0.2s;
-            /* Add transitions for smooth effect */
         }
 
-        /* Create a flex container for the main content */
         main {
             padding: 0rem;
             display: flex;
@@ -99,8 +82,7 @@
             align-items: center;
         }
 
-        /* Style for the movie list */
-        #movie-list {
+        #tv-list {
             display: flex;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             flex-wrap: wrap;
@@ -108,7 +90,7 @@
             justify-content: center;
         }
 
-        .movie-card {
+        .tv-card {
             border: 1px solid #ccc;
             padding: 15px;
             max-width: 300px;
@@ -116,9 +98,8 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive adjustments */
         @media screen and (max-width: 768px) {
-            #movie-list {
+            #tv-list {
                 flex-direction: column;
                 align-items: center;
             }
@@ -127,13 +108,9 @@
         #genre-dropdown-container {
             display: flex;
             flex-direction: row-reverse;
-            /* Stack the genre dropdown below the movie list */
             align-items: flex-end;
-            /* Align the dropdown to the right side */
             width: 100%;
-            /* Occupy the entire width */
             gap: 20px;
-            /* Add spacing between the dropdowns */
             padding: 10px;
         }
 
@@ -141,37 +118,53 @@
         #sort-dropdown {
             width: 200px;
             font-size: 16px;
-            padding: 5px 10px;
+            padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: white;
             color: #333;
             vertical-align: top;
-            /* Vertically align the dropdown */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+
+        #genre-dropdown:hover,
+        #sort-dropdown:hover {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(3, 215, 252);
+        }
+
+        #genre-dropdown option,
+        #sort-dropdown option {
+            color: #333;
+        }
+
+        #genre-dropdown option:checked,
+        #sort-dropdown option:checked {
+            background-color: #007BFF;
+            color: white;
+        }
+
 
         .social-links a {
             display: inline-block;
             margin: 0 10px;
             color: #333;
             font-size: 16px;
-            /* Adjust font size for the icons */
             text-decoration: none;
             vertical-align: middle;
-            /* Vertically align icons */
             width: 16px;
-            /* Set width to match the width of dropdowns */
             height: 10px;
-            /* Set height to match the height of dropdowns */
         }
+
+        .fa:hover {
+            color: #e74c3c;
+        }
+
 
         #social-linsk-container {
             display: flex;
             flex-direction: row;
-            /* Stack the genre dropdown below the movie list */
             width: 100%;
-            /* Occupy the entire width */
-            padding: -50px;
         }
 
         .navbar {
@@ -189,166 +182,153 @@
             gap: 10px;
         }
 
-        .nav-dropdowns {
-            display: flex;
-            gap: 10px;
-        }
-
-        /* Styles for the hamburger menu */
-        .menu-toggle {
-            display: block;
-            cursor: pointer;
-        }
-
-        .menu-btn {
-            width: 30px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: transparent;
-            border: none;
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
-        }
-
-        .bar {
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            transition: 0.4s;
-        }
-
-        .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            /* Initially hidden */
-            position: absolute;
-            top: 60px;
-            /* Adjust the top position as needed */
-            right: 20px;
-            /* Adjust the right position as needed */
+        .button-4 {
+            appearance: none;
             background-color: white;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
-        }
-
-        .menu li {
-            margin: 10px 0;
-        }
-
-        .menu a {
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+            box-sizing: border-box;
+            color: #24292E;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            list-style: none;
+            padding: 6px 16px;
+            position: relative;
+            transition: border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            /* Change to border-color for transition */
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+            word-wrap: break-word;
             text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            display: block;
-            padding: 10px;
         }
 
-        /* Styles for the open menu */
-        .menu-toggle input:checked~.menu {
-            display: block;
+        .button-4:hover {
+            border-color: rgba(3, 215, 252);
+            box-shadow: rgba(3, 215, 252, 0.5) 0 0 0 3px;
         }
 
-        /* Styles for hiding the checkbox */
-        .menu-toggle input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
+        .button-4:hover span {
+            color: rgba(3, 215, 252);
+        }
+
+        .button-4 a {
+            color: black;
+        }
+
+        .button-4:disabled {
+            background-color: #FAFBFC;
+            border-color: rgba(27, 31, 35, 0.15);
+            color: #959DA5;
+            cursor: default;
+        }
+
+        .button-4:active {
+            background-color: #EDEFF2;
+            box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+            transition: none 0s;
+        }
+
+        .button-4:focus {
+            outline: 1px transparent;
+        }
+
+        .button-4:before {
+            display: none;
+        }
+
+        .button-4:-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
+
 
 <body>
     <nav class="navbar">
         <div class="social-links">
             <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
             <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://github.com/Amasil" class="fa fa-github" target="_blank"></a>
             <a href="https://www.facebook.com/amasil123/" class="fa fa-facebook" target="_blank"></a>
             <a href="https://twitter.com/amasil_r" class="fa fa-twitter" target="_blank"></a>
             <a href="https://www.instagram.com/amasil_r/" class="fa fa-instagram" target="_blank"></a>
-            <a href="https://t.snapchat.com/HqTvBluK" class="fa fa-snapchat-ghost" target="_blank"></a>
         </div>
-        <div class="nav-dropdowns">
-            <select id="genre-dropdown">
-                Options for genres
-            </select>
-            <select id="sort-dropdown">
-                <option value="sort" selected>Sort</option>
-                <option value="imdb-highest">IMDb High-Low</option>
-                <option value="imdb-lowest">IMDb Low-High</option>
-                <option value="name-az">Name A-Z</option>
-                <option value="name-za">Name Z-A</option>
-            </select>
-        </div>
+
         <div class="menu-toggle">
-            <input type="checkbox" id="menu-check">
-            <label for="menu-check" class="menu-btn">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </label>
-            <ul class="menu">
-                <li><a href="movielist.html">Favourite Movies</a></li>
-                <li><a href="tvlist.html">Favourite TV Shows</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+            <div class="nav-dropdowns">
+                <select id="genre-dropdown">
+                    Options for genres
+                </select>
+                <select id="sort-dropdown">
+                    <option value="sort" selected>Sort</option>
+                    <option value="imdb-highest">IMDb High-Low</option>
+                    <option value="imdb-lowest">IMDb Low-High</option>
+                    <option value="name-az">Name A-Z</option>
+                    <option value="name-za">Name Z-A</option>
+                </select>
+                <button class="button-4" role="button"><a href="movielist.html">Favourite Movies</a></button>
+                <button class="button-4" role="button"><a href="about.html">About</a></button>
+            </div>
         </div>
-
-
     </nav>
+
     <main>
-        <div id="movie-list">
+        <div id="tv-list">
         </div>
     </main>
-    <script>// Asynchronous function to set up the movie list and genre filter buttons
+    <script>// Asynchronous function to set up the tv list and genre filter buttons
         (async () => {
-            // Function to fetch movie details from OMDB API
-            async function fetchMovieDetails(movieId) {
+            // Function to fetch tv details from OMDB API
+            async function fetchtvDetails(tvId) {
                 const apiKey = "da76dc6a"; // Your OMDB API key
-                const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
+                const url = `https://www.omdbapi.com/?i=${tvId}&apikey=${apiKey}`;
 
                 try {
-                    // Fetch movie details from OMDB API
+                    // Fetch tv details from OMDB API
                     const response = await fetch(url);
                     const data = await response.json();
                     return data;
                 } catch (error) {
-                    console.error("Error fetching movie details:", error);
+                    console.error("Error fetching tv details:", error);
                     return null;
                 }
             }
 
-            // Function to create a movie card with details
-            async function createMovieCard(movieId) {
-                const movieData = await fetchMovieDetails(movieId);
+            // Function to create a tv card with details
+            async function createtvCard(tvId) {
+                const tvData = await fetchtvDetails(tvId);
 
-                if (!movieData || movieData.Response === "False") {
+                if (!tvData || tvData.Response === "False") {
                     return null;
                 }
 
-                // Create a movie card element
+                // Create a tv card element
                 const card = document.createElement("div");
-                card.classList.add("movie-card");
+                card.classList.add("tv-card");
 
-                // Fill in movie card content with fetched data
+                // Fill in tv card content with fetched data
                 card.innerHTML = `
-              <img src="${movieData.Poster}" alt="${movieData.Title}">
-              <h2 class="title">${movieData.Title} (${movieData.Year})</h2>
-              <p class="genre">${movieData.Genre}</p>
-              <p class="rating">IMDB Rating: ${movieData.imdbRating}</p>
-              <p class="synopsis">${movieData.Plot}</p>
+              <img src="${tvData.Poster}" alt="${tvData.Title}">
+              <h2 class="title">${tvData.Title} (${tvData.Year})</h2>
+              <p class="genre">${tvData.Genre}</p>
+              <p class="rating">IMDB Rating: <strong>${tvData.imdbRating}</strong></p>
+              <p class="synopsis">${tvData.Plot}</p>
             `;
 
                 return card;
             }
 
-            // Add movie cards to the page
-            const movieList = document.getElementById("movie-list");
-            const movieIds = [
+            // Add tv cards to the page
+            const tvList = document.getElementById("tv-list");
+            const tvIds = [
                 "tt4158110",
                 "tt3032476",
                 "tt0903747",
@@ -370,30 +350,30 @@
                 "tt6077448",
 
                 "tt9544034",
-            ]; // IMDb IDs for movies
+            ]; // IMDb IDs for tvs
 
             const genreDropdown = document.getElementById("genre-dropdown");
             let selectedGenre = "all"; // Track the selected genre
 
-            const allMovieCards = [];
-            for (const movieId of movieIds) {
-                const movieCard = await createMovieCard(movieId);
-                if (movieCard) {
-                    allMovieCards.push(movieCard);
-                    movieList.appendChild(movieCard);
-                    // Add a click event listener to each movie card
-                    movieCard.addEventListener("click", () => {
-                        openIMDbPage(movieId); // Open the IMDb page for the clicked movie
+            const alltvCards = [];
+            for (const tvId of tvIds) {
+                const tvCard = await createtvCard(tvId);
+                if (tvCard) {
+                    alltvCards.push(tvCard);
+                    tvList.appendChild(tvCard);
+                    // Add a click event listener to each tv card
+                    tvCard.addEventListener("click", () => {
+                        openIMDbPage(tvId); // Open the IMDb page for the clicked tv
                     });
                 }
             }
 
             // Create the genre dropdown options
             const genres = new Set();
-            allMovieCards.forEach((movieCard) => {
-                const genre = movieCard.querySelector(".genre").textContent;
-                const movieGenres = genre.split(",").map((genre) => genre.trim());
-                movieGenres.forEach((genre) => genres.add(genre));
+            alltvCards.forEach((tvCard) => {
+                const genre = tvCard.querySelector(".genre").textContent;
+                const tvGenres = genre.split(",").map((genre) => genre.trim());
+                tvGenres.forEach((genre) => genres.add(genre));
             });
 
             // Create the "All Genres" option in the dropdown
@@ -413,7 +393,7 @@
             // Add change event listener to the genre dropdown
             genreDropdown.addEventListener("change", (event) => {
                 selectedGenre = event.target.value;
-                filterMoviesByGenre(selectedGenre);
+                filtertvsByGenre(selectedGenre);
             });
             // Highlight the selected genre button and clear others
             function highlightSelectedButton(selectedButton) {
@@ -423,19 +403,19 @@
                 });
                 selectedButton.classList.add("selected");
             }
-            // Function to open the IMDb page for a movie
-            function openIMDbPage(movieId) {
-                window.open(`https://www.imdb.com/title/${movieId}/`, "_blank");
+            // Function to open the IMDb page for a tv
+            function openIMDbPage(tvId) {
+                window.open(`https://www.imdb.com/title/${tvId}/`, "_blank");
             }
-            // Filter movies based on the selected genre
-            function filterMoviesByGenre(selectedGenre) {
-                allMovieCards.forEach((movieCard) => {
-                    const genre = movieCard.querySelector(".genre").textContent;
-                    const movieGenres = genre.split(",").map((genre) => genre.trim());
-                    if (selectedGenre === "all" || movieGenres.includes(selectedGenre)) {
-                        movieCard.style.display = "block"; // Show matching movies
+            // Filter tvs based on the selected genre
+            function filtertvsByGenre(selectedGenre) {
+                alltvCards.forEach((tvCard) => {
+                    const genre = tvCard.querySelector(".genre").textContent;
+                    const tvGenres = genre.split(",").map((genre) => genre.trim());
+                    if (selectedGenre === "all" || tvGenres.includes(selectedGenre)) {
+                        tvCard.style.display = "block"; // Show matching tvs
                     } else {
-                        movieCard.style.display = "none"; // Hide non-matching movies
+                        tvCard.style.display = "none"; // Hide non-matching tvs
                     }
                 });
             }
@@ -448,22 +428,22 @@
                 if (selectedOption === "sort") {
                     // Revert to default sorting here (if you have one)
                     // For example, you can sort by IMDb Highest-Lowest initially.
-                    sortMoviesByIMDb("highest");
+                    sorttvsByIMDb("highest");
                 } else {
                     const sortType = selectedOption.split("-")[0];
                     const sortOrder = selectedOption.split("-")[1];
 
                     if (sortType === "imdb") {
-                        sortMoviesByIMDb(sortOrder);
+                        sorttvsByIMDb(sortOrder);
                     } else if (sortType === "name") {
-                        sortMoviesByName(sortOrder);
+                        sorttvsByName(sortOrder);
                     }
                 }
             });
 
-            // Sort movies by IMDb rating
-            function sortMoviesByIMDb(order) {
-                allMovieCards.sort((a, b) => {
+            // Sort tvs by IMDb rating
+            function sorttvsByIMDb(order) {
+                alltvCards.sort((a, b) => {
                     const ratingA = parseFloat(
                         a.querySelector(".rating").textContent.split(":")[1]
                     );
@@ -474,12 +454,12 @@
                     return order === "highest" ? ratingB - ratingA : ratingA - ratingB;
                 });
 
-                updateMovieList();
+                updatetvList();
             }
 
-            // Sort movies by title
-            function sortMoviesByName(order) {
-                allMovieCards.sort((a, b) => {
+            // Sort tvs by title
+            function sorttvsByName(order) {
+                alltvCards.sort((a, b) => {
                     const titleA = a.querySelector(".title").textContent;
                     const titleB = b.querySelector(".title").textContent;
 
@@ -490,14 +470,14 @@
                     }
                 });
 
-                updateMovieList();
+                updatetvList();
             }
 
-            // Update the movie list after sorting
-            function updateMovieList() {
-                movieList.innerHTML = "";
-                allMovieCards.forEach((movieCard) => {
-                    movieList.appendChild(movieCard);
+            // Update the tv list after sorting
+            function updatetvList() {
+                tvList.innerHTML = "";
+                alltvCards.forEach((tvCard) => {
+                    tvList.appendChild(tvCard);
                 });
             }
         })();</script>
