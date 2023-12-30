@@ -1,90 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Amasil Rahim</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <style>
-      body {
-        min-width: 400px;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #f5f5f5;
-        font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
-          sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-      }
 
-      .home-button {
-        position: absolute;
-        top: 28px;
-        left: 33px;
-        font-size: 24px;
-        color: #333;
-        text-decoration: none;
-        z-index: 2;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Amasil Rahim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    body {
+      min-width: 400px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    }
 
-      .home-button:hover {
-        color: #e74c3c;
-      }
+    .home-button {
+      position: absolute;
+      top: 28px;
+      left: 33px;
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+      z-index: 2;
+    }
 
-      .social-links {
-        display: flex;
-        gap: 20px;
-        font-size: 36px;
-        margin-top: 40px;
-      }
+    .home-button:hover {
+      color: #e74c3c;
+    }
 
-      .social-links a {
-        text-decoration: none;
-      }
+    .social-links {
+      display: flex;
+      gap: 20px;
+      font-size: 36px;
+      margin-top: 40px;
+    }
 
-      .fa {
-        color: #333;
-        transition: color 0.3s;
-      }
+    .social-links a {
+      text-decoration: none;
+    }
 
-      .fa:hover {
-        color: #e74c3c;
-      }
+    .fa {
+      color: #333;
+      transition: color 0.3s;
+    }
 
-      body,
-      .nav,
-      .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .fa:hover {
+      color: #e74c3c;
+    }
+
+    body,
+    .nav,
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu {
+      margin: 0;
+      padding: 10px;
+      width: auto;
+      overflow: hidden;
+      height: 25px;
+    }
+
+    .menu li {
+      list-style: none;
+      margin: 0 10px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #666;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: 0.5s;
+    }
+
+    .menu li a:hover {
+      color: #161919;
+    }
+
+    .about-section {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 80px;
+      padding: 60px;
+      text-align: left;
+      background-color: #fff;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-heading {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .about-paragraph {
+      margin-bottom: 20px;
+    }
+
+    .icon-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .icon-container .hamburger {
+      display: block;
+    }
+
+    .icon-container .close-button {
+      display: none;
+    }
+
+    .icon-container .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+
+    /* Add media query for smaller screens */
+    @media only screen and (max-width: 768px) {
 
       .nav {
+        text-align: center;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+      }
+
+      .hamburger,
+      .close-button {
+        display: block;
         position: absolute;
-        top: 20px;
+        top: 11px;
         right: 20px;
-        background-color: #fff;
-        border-radius: 50px;
-        overflow: hidden;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 2;
+        /* Set a higher z-index */
       }
 
       .menu {
-        margin: 0;
-        padding: 10px;
-        width: auto;
-        overflow: hidden;
-        height: 25px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 1;
+        /* Set a lower z-index */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        background-color: white;
+      }
+
+      .close-button {
+        font-size: 24px;
+        cursor: pointer;
       }
 
       .menu li {
         list-style: none;
-        margin: 0 10px;
+        margin: 20px 0;
       }
 
       .menu li a {
@@ -100,164 +227,184 @@
       }
 
       .about-section {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 60px;
-        text-align: left;
-        background-color: #fff;
-        border-radius: 50px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        margin-top: 80px;
       }
 
-      .about-heading {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
+      .close-button {
+        display: none;
+        position: absolute;
+        top: 11px;
+        right: 20px;
+        cursor: pointer;
       }
 
-      .about-paragraph {
-        margin-bottom: 20px;
+      .close-button .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        background-color: black;
+        transform-origin: center;
       }
 
-      /* Add media query for smaller screens */
-      @media only screen and (max-width: 768px) {
-        .home-button,
-        .nav {
-          text-align: center;
-          width: 100%;
-          margin: 0px;
-          left: 0px;
-          top: 0px;
-          right: 0px;
-        }
-
-        .menu {
-          margin-top: 30px;
-          display: block;
-          text-align: center;
-        }
-
-        .menu li {
-          display: inline-block;
-          margin: 0 5px;
-        }
-
-        .about-section {
-          padding: 30px;
-          margin-top: 80px;
-        }
+      .close-button .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
       }
-      /* Add media query for smaller screens */
-      @media only screen and (max-width: 600px) {
-        .home-button,
-        .nav {
-          text-align: center;
-          width: 100%;
-          left: 0px;
-          top: 0px;
-          right: 0px;
-        }
 
-        .menu {
-          margin-top: 35px;
-          display: block;
-          text-align: center;
-          padding-bottom: 20px;
-        }
-
-        .menu li {
-          display: inline-block;
-        }
-
-        .about-section {
-          margin-top: 94px;
-        }
+      .close-button .bar:nth-child(2) {
+        opacity: 0;
       }
-    </style>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1/1176.png" />
-  </head>
 
-  <body>
-    <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
+      .close-button .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
 
-    <div class="nav">
-      <div class="menu">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="movielist.html">Favourite Movies</a></li>
-        <li><a href="tvlist.html">Favourite TV Shows</a></li>
-      </div>
+      .close-button:hover .bar {
+        background-color: #e74c3c;
+      }
+
+
+    }
+  </style>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1/1176.png" />
+</head>
+
+<body>
+  <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
+
+  <div class="icon-container">
+    <!-- Hamburger icon -->
+    <div class="hamburger" id="hamburgerIcon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-
-    <div class="about-section">
-      <p class="about-heading">About Me</p>
-      <p class="about-paragraph">
-        Hello, I'm Amasil. A computer science student at the University of
-        Calgary, pursuing a B.Sc. in Computer Science
-      </p>
-
-      <p class="about-paragraph">
-        Experienced in a diverse range of programming languages, including C,
-        C++, Python, Java, JavaFX, JavaSwing, SQL, HTML, CSS, JavaScript, React,
-        Node.Js, and Express.Js. Proficient in utilizing developer tools such as
-        Git, MySQL, VS Code and GitHub Copilot to drive effective development
-        processes.
-      </p>
-
-      <p class="about-paragraph">
-        In my current role as a CSR at Intact Financial Corporation, I have
-        demonstrated a strong aptitude for optimizing processes. Leading the
-        creation of thorough guides and resources, I have improved the
-        effectiveness of the payment workflow and added to the team's success as
-        a whole.
-      </p>
-
-      <p class="about-paragraph">
-        At the University of Calgary, I work as a lab supervisor. I effectively
-        manage and administer lab equipment, supervise its maintenance,
-        proactively address computer problems for almost 200 users each week,
-        and optimize support for faculty and students.
-      </p>
-
-      <p class="about-paragraph">
-        My work experience also includes a role as a Claims Assistant II at
-        Intact Financial Corporation, where I conducted system checks, ensured
-        resource readiness for new hires, and supported claims adjusters in
-        accurate claims management and file handling.
-      </p>
-
-      <p class="about-paragraph">
-        I am passionate about software development and have undertaken impactful
-        projects, including a Blood Donation Management System using React,
-        Node.js, SQL, and MySQL, Websites with HTML, CSS, JavaScript, and Git
-        integration, and a DTPR Payment Calculator with HTML, CSS, and
-        JavaScript.
-      </p>
-
-      <p class="about-paragraph">
-        Committed to community engagement, I volunteered at Calgary Hacks 2023,
-        where I effectively communicated expectations and logistics for 250
-        participants and oversaw the management of 45 groups.
-      </p>
-
-      <p class="about-paragraph">
-        Eager to expand my technical expertise, I am dedicated to contributing
-        to innovative solutions in computer science and making a positive impact
-        through my skills and experiences. I am excited about transitioning into
-        a career as a software developer to further pursue my passion for
-        crafting efficient and impactful solutions.
-      </p>
-      <div class="social-links">
-        <a
-          href="https://www.linkedin.com/in/amasilrahim/"
-          class="fa fa-linkedin"
-          target="_blank"
-        ></a>
-        <a
-          href="https://github.com/Amasil"
-          class="fa fa-github"
-          target="_blank"
-        ></a>
-      </div>
+    <!-- Close button icon -->
+    <div class="close-button" id="closeIcon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-  </body>
+  </div>
+
+  <div class="nav">
+    <div class="menu">
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="movielist.html">Favourite Movies</a></li>
+      <li><a href="tvlist.html">Favourite TV Shows</a></li>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <p class="about-heading">About Me</p>
+    <p class="about-paragraph">
+      Hello, I'm Amasil. A computer science student at the University of
+      Calgary, pursuing a B.Sc. in Computer Science
+    </p>
+
+    <p class="about-paragraph">
+      Experienced in a diverse range of programming languages, including C,
+      C++, Python, Java, JavaFX, JavaSwing, SQL, HTML, CSS, JavaScript, React,
+      Node.Js, and Express.Js. Proficient in utilizing developer tools such as
+      Git, MySQL, VS Code and GitHub Copilot to drive effective development
+      processes.
+    </p>
+
+    <p class="about-paragraph">
+      In my current role as a CSR at Intact Financial Corporation, I have
+      demonstrated a strong aptitude for optimizing processes. Leading the
+      creation of thorough guides and resources, I have improved the
+      effectiveness of the payment workflow and added to the team's success as
+      a whole.
+    </p>
+
+    <p class="about-paragraph">
+      At the University of Calgary, I work as a lab supervisor. I effectively
+      manage and administer lab equipment, supervise its maintenance,
+      proactively address computer problems for almost 200 users each week,
+      and optimize support for faculty and students.
+    </p>
+
+    <p class="about-paragraph">
+      My work experience also includes a role as a Claims Assistant II at
+      Intact Financial Corporation, where I conducted system checks, ensured
+      resource readiness for new hires, and supported claims adjusters in
+      accurate claims management and file handling.
+    </p>
+
+    <p class="about-paragraph">
+      I am passionate about software development and have undertaken impactful
+      projects, including a Blood Donation Management System using React,
+      Node.js, SQL, and MySQL, Websites with HTML, CSS, JavaScript, and Git
+      integration, and a DTPR Payment Calculator with HTML, CSS, and
+      JavaScript.
+    </p>
+
+    <p class="about-paragraph">
+      Committed to community engagement, I volunteered at Calgary Hacks 2023,
+      where I effectively communicated expectations and logistics for 250
+      participants and oversaw the management of 45 groups.
+    </p>
+
+    <p class="about-paragraph">
+      Eager to expand my technical expertise, I am dedicated to contributing
+      to innovative solutions in computer science and making a positive impact
+      through my skills and experiences. I am excited about transitioning into
+      a career as a software developer to further pursue my passion for
+      crafting efficient and impactful solutions.
+    </p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/amasilrahim/" class="fa fa-linkedin" target="_blank"></a>
+      <a href="https://github.com/Amasil" class="fa fa-github" target="_blank"></a>
+    </div>
+  </div>
+</body>
+
+
+<script>
+
+  const iconContainer = document.querySelector('.icon-container');
+  const menu = document.querySelector('.menu');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  iconContainer.addEventListener('click', function (event) {
+    // Check if the hamburger icon was clicked
+    if (event.target === hamburgerIcon) {
+      menu.style.display = 'flex';
+      hamburgerIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    }
+    // Check if the close icon was clicked
+    else if (event.target === closeIcon) {
+      menu.style.display = 'none';
+      hamburgerIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+  });
+
+  // Add an event listener to close the menu when clicking outside of it
+  document.addEventListener('click', function (event) {
+    if (
+      !iconContainer.contains(event.target) &&
+      event.target !== menu &&
+      window.innerWidth > 768 // Add this condition to check for larger screens
+    ) {
+      menu.style.display = 'flex';
+      hamburgerIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    } else if (!iconContainer.contains(event.target) && event.target !== menu) {
+      menu.style.display = 'none';
+      hamburgerIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+  });
+
+
+</script>
+
+
 </html>

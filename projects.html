@@ -162,10 +162,37 @@
             align-items: center;
         }
 
-ul{padding-right: 40px;}
+        ul {
+            padding-right: 40px;
+        }
 
         .project-list li:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .icon-container .hamburger {
+            display: block;
+        }
+
+        .icon-container .close-button {
+            display: none;
+        }
+
+        .icon-container .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
         }
 
         @media only screen and (max-width: 768px) {
@@ -190,65 +217,141 @@ ul{padding-right: 40px;}
         /* Add media query for smaller screens */
         @media only screen and (max-width: 768px) {
 
-            .home-button,
             .nav {
                 text-align: center;
                 width: 100%;
-                margin: 0px;
-                left: 0px;
-                top: 0px;
-                right: 0px;
+            }
+
+            .hamburger,
+            .close-button {
+                display: block;
+                position: absolute;
+                top: 11px;
+                right: 20px;
+                cursor: pointer;
+                z-index: 2;
+                /* Set a higher z-index */
             }
 
             .menu {
-                margin-top: 30px;
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                z-index: 1;
+                /* Set a lower z-index */
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .bar {
                 display: block;
-                text-align: center;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                background-color: white;
+            }
+
+            .close-button {
+                cursor: pointer;
             }
 
             .menu li {
-                display: inline-block;
-                margin: 0 5px;
+                list-style: none;
+                margin: 20px 0;
+            }
+
+            .menu li a {
+                text-decoration: none;
+                color: #666;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: 0.5s;
+            }
+
+            .menu li a:hover {
+                color: #161919;
             }
 
             .about-section {
                 padding: 30px;
                 margin-top: 80px;
             }
-        }
-              /* Add media query for smaller screens */
-      @media only screen and (max-width: 600px) {
-        .home-button,
-        .nav {
-          text-align: center;
-          width: 100%;
-          left: 0px;
-          top: 0px;
-          right: 0px;
-        }
 
-        .menu {
-          margin-top: 35px;
-          display: block;
-          text-align: center;
-          padding-bottom: 20px;
-        }
+            .close-button {
+                display: none;
+                position: absolute;
+                top: 11px;
+                right: 20px;
+                cursor: pointer;
+            }
 
-        .menu li {
-          display: inline-block;
-        }
+            .close-button .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                background-color: black;
+                transform-origin: center;
+            }
 
-        .about-section {
-          margin-top: 94px;
+            .close-button .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .close-button .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .close-button .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .close-button:hover .bar {
+                background-color: #e74c3c;
+            }
         }
-      }
     </style>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5956/5956597.png">
 </head>
 
 <body>
     <a href="index.html" class="home-button"><i class="fa fa-home"></i></a>
-
+    <div class="icon-container">
+        <!-- Hamburger icon -->
+        <div class="hamburger" id="hamburgerIcon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- Close button icon -->
+        <div class="close-button" id="closeIcon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
     <div class="nav">
         <div class="menu">
             <li><a href="about.html">About</a></li>
@@ -340,5 +443,47 @@ ul{padding-right: 40px;}
     </div>
 
 </body>
+
+<script>
+
+    const iconContainer = document.querySelector('.icon-container');
+    const menu = document.querySelector('.menu');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    iconContainer.addEventListener('click', function (event) {
+        // Check if the hamburger icon was clicked
+        if (event.target === hamburgerIcon) {
+            menu.style.display = 'flex';
+            hamburgerIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        }
+        // Check if the close icon was clicked
+        else if (event.target === closeIcon) {
+            menu.style.display = 'none';
+            hamburgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        }
+    });
+
+    // Add an event listener to close the menu when clicking outside of it
+    document.addEventListener('click', function (event) {
+        if (
+            !iconContainer.contains(event.target) &&
+            event.target !== menu &&
+            window.innerWidth > 768 // Add this condition to check for larger screens
+        ) {
+            menu.style.display = 'flex';
+            hamburgerIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        } else if (!iconContainer.contains(event.target) && event.target !== menu) {
+            menu.style.display = 'none';
+            hamburgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        }
+    });
+
+
+</script>
 
 </html>
